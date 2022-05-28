@@ -35,14 +35,14 @@ class ViewController: UIViewController {
     @objc func showAlert() {
         let alert = UIAlertController(title: "Deseja sair da sua conta?", message: "", preferredStyle: .alert)
         
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .default))
+        
         alert.addAction(UIAlertAction(title: "Sair", style: .destructive, handler: {action in
             let navVC = UINavigationController(rootViewController: ViewTwo())
             navVC.modalPresentationStyle = .fullScreen
             navVC.modalTransitionStyle = .flipHorizontal
             self.present(navVC, animated: true)
         }))
-        
-        alert.addAction(UIAlertAction(title: "Cancelar", style: .default))
         
         present(alert, animated: true)
     }
